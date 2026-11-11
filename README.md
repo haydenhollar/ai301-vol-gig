@@ -31,6 +31,8 @@ All data in this repository is synthetic. No real people.
 | `notebooks/04_evaluation.ipynb` (score all 20 situations, results table, chart) | Hayden |
 | `notebooks/05_demo.ipynb` (Gradio demo) | Jefferson |
 | `results/` | Whoever's notebook writes the file |
+| `src/volgig.py` (data loader, ZIP distances, hard filters, mock tools, scoring) | Both. Change only when both agree, since every score depends on it. |
+| `data/DATA_NOTES.md`, `data/zip_centers.csv` | Hayden |
 | `README.md` | Both. Hayden leads. |
 
 Slides (Jefferson leads) and the report (Hayden leads) live in shared Google Drive files, not here.
@@ -85,7 +87,8 @@ Each student sets a `travel_radius_miles`: 3 to 5 miles without a car, 10 to 25 
 ## Folder layout
 
 ```
-data/        students.csv, postings.csv, test_set.csv, planted_cases.csv
+data/        students.csv, postings.csv, test_set.csv, planted_cases.csv, zip_centers.csv, DATA_NOTES.md
+src/         volgig.py, shared code every notebook imports
 notebooks/   01 to 05, one owner each
 results/     score tables, charts, agent logs
 ```

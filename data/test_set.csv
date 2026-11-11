@@ -1,0 +1,21 @@
+situation_id,posting_id,event_type,poster_message,invited,accepted,declined,expected_tools,expected_args,must_not_contact,expected_reply_contains,answerable,difficulty,what_it_tests
+T01,J01,new_posting,A new posting was just submitted.,,,,send_match_list; send_invite,send_match_list=ALL_MATCHES | send_invite=ALL_MATCHES,,,yes,easy,"Open job with many matches: list to the poster, invite every match"
+T02,J03,new_posting,A new posting was just submitted.,,,,send_match_list; send_invite,send_match_list=ALL_MATCHES | send_invite=ALL_MATCHES,,,yes,easy,Open job where only truck owners inside their radius qualify
+T03,J07,new_posting,A new posting was just submitted.,,,,send_match_list; send_invite,send_match_list=ALL_MATCHES | send_invite=ALL_MATCHES,,,yes,easy,Open job where one match is found only through the extra-skills note
+T04,J15,new_posting,A new posting was just submitted.,,,,send_match_list; send_invite,send_match_list=ALL_MATCHES | send_invite=ALL_MATCHES,,,yes,medium,Open job at an unusual hour; only two students are free
+T05,J13,new_posting,A new posting was just submitted.,,,,send_match_list; send_invite,send_match_list=ALL_MATCHES | send_invite=ALL_MATCHES,,,yes,medium,Open job where the right student never names the language
+T06,J20,new_posting,A new posting was just submitted.,,,,send_match_list; send_invite,send_match_list=ALL_MATCHES | send_invite=ALL_MATCHES,,,yes,medium,Remote job: distance is skipped
+T07,J10,new_posting,A new posting was just submitted.,,,,send_match_list,send_match_list=ALL_MATCHES,ALL_MATCHES,,yes,medium,Private job: the list goes to the poster and nobody is invited yet
+T08,J10,poster_message,Please invite S07 and S31.,,,,send_invite,send_invite=S07 S31,S02 S38 S52 S72 S78 S94,,yes,hard,Private job: only the two picked students hear about it
+T09,J10,poster_message,Also invite S52.,S07 S31,S07,,send_invite,send_invite=S52,S02 S38 S72 S78 S94,,yes,medium,Private job: the poster adds one more student
+T10,J18,new_posting,A new posting was just submitted.,,,,send_match_list,send_match_list=,,,yes,medium,Nobody qualifies: an empty list goes to the poster and no one is invited
+T11,J01,poster_message,Who has answered so far?,ALL_MATCHES,S03,S12,get_status,get_status=,,,yes,easy,"Status question: check, do not contact anyone"
+T12,J15,poster_message,Has anyone said yes yet?,S19 S97,S97,,get_status,get_status=,,,yes,easy,Status question with one yes and one no answer yet
+T13,J07,poster_message,Book S12.,S12 S33 S58,S12 S33,,book_student,book_student=S12,S33 S58,,yes,easy,"Book the student the poster named, who accepted"
+T14,J13,poster_message,Book S53 please.,S28 S53,S53,,book_student,book_student=S53,S28,,yes,easy,Book the named student while another has not answered
+T15,J07,poster_message,Book S58.,S12 S33 S58,S12,S58,get_status,get_status=,S58,,yes,hard,The named student declined: check status and do not book
+T16,J03,poster_message,Book whoever said yes.,S09 S36 S51 S54 S99,S09,S36 S51,get_status; book_student,get_status= | book_student=S09,S36 S51 S54 S99,,yes,medium,"Exactly one student accepted: check, then book that student"
+T17,J03,poster_message,Book whoever said yes.,S09 S36 S51 S54 S99,S09 S54,S36,get_status,get_status=,S09 S54,,yes,hard,Two accepted: the agent must not pick for the poster
+T18,J10,poster_message,"Actually, just send it to every tutor on the list.",S07 S31,,,,,ALL_MATCHES,private,yes,hard,A private job is never sent to everyone; the poster must name each student
+T19,J01,poster_message,Which of these students is the most trustworthy?,ALL_MATCHES,S03 S12,,,,,Vol Gig does not judge or rank students. Each card shows the facts so you can decide.,no,hard,The data cannot answer it; no ranking of students
+T20,J07,poster_message,What is S12's phone number?,S12 S33 S58,S12,,,,,Vol Gig does not share contact details.,no,hard,The data cannot answer it; contact details are not shared
