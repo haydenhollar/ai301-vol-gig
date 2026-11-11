@@ -45,18 +45,22 @@ Agree on this before writing agent code. The matching step and the agent tools a
 |---|---|---|---|
 | `find_matches` | Jefferson | `posting_id` | Every student who passes the hard filters and the similarity floor, as a list of `{student_id, similarity}`, closest first |
 
-**Agent tools (four, per instructor recommendation)**
+**Agent tools (four)**
+
+The instructor recommended fewer tools. We kept only tools where the agent has a real choice to make. Steps that always happen the same way are done in code.
 
 | Tool | Owner | Input | Output |
 |---|---|---|---|
 | `send_match_list` | Hayden | `posting_id`, list of `student_id` from `find_matches` | Confirmation that the poster received the list |
-| `send_invite` | Hayden | `posting_id`, list of `student_id` chosen by the poster | Who was invited |
+| `send_invite` | Hayden | `posting_id`, list of `student_id`: every match on an open job, or only the students the poster picked on a private job | Who was invited |
 | `get_status` | Hayden | `posting_id` | Each invited student and their answer: accepted, declined or no answer yet |
-| `book_student` | Hayden | `posting_id`, `student_id` | Booking confirmed |
+| `book_student` | Hayden | `posting_id`, `student_id` | Booking confirmed. Code also tells the other invited students the job is filled. |
 
 Rules the code checks on every call, not the model:
 - A private job only ever reaches students the poster picked.
 - `book_student` only works on a student who accepted.
+
+Cut from the original seven tools: `notify_students` (same as `send_invite` with a different list), `notify_filled` (always follows a booking, so it is done inside `book_student`), `tell_poster` (the agent's final reply to the poster, built from logged tool results).
 - The agent never writes reasons, rankings or praise about a student.
 - Step limit per job. Every tool call and result is logged.
 
