@@ -1,8 +1,10 @@
 # AI 301 Team 6: Vol Gig matching agent
 
-Class project for AI 301 (Track 2, Agents). A poster fills out a job form. The system finds every student who qualifies, then an agent picks tools to send the match list, notify or invite students, book one, and tell the others the job is filled.
+Class project for AI 301 (Track 2, Agents). A poster fills out a job form. The system finds every student who qualifies, then an agent picks from four tools to send the match list to the poster, invite the students the poster picks, check who accepted or declined, and book one.
 
 Team: Hayden Hollar and Jefferson Vicente.
+
+Data: 100 synthetic students (`students.csv`) and 20 job postings (`postings.csv`).
 
 All data in this repository is synthetic. No real people.
 
@@ -25,7 +27,7 @@ All data in this repository is synthetic. No real people.
 | `data/planted_cases.csv` | Hayden |
 | `notebooks/01_data_checks.ipynb` | Hayden |
 | `notebooks/02_matching.ipynb` (hard filters, embeddings, FAISS, similarity floor, BM25 baseline, two-vector test) | Jefferson |
-| `notebooks/03_agent.ipynb` (agent loop, guardrails, messaging tools) | Hayden |
+| `notebooks/03_agent.ipynb` (agent loop, guardrails, the four agent tools) | Hayden |
 | `notebooks/04_evaluation.ipynb` (score all 20 situations, results table, chart) | Hayden |
 | `notebooks/05_demo.ipynb` (Gradio demo) | Jefferson |
 | `results/` | Whoever's notebook writes the file |
@@ -35,20 +37,26 @@ Slides (Jefferson leads) and the report (Hayden leads) live in shared Google Dri
 
 ## Tool contract
 
-Agree on this before writing agent code. The matching tool and the messaging tools are built by different people, so the names, inputs and outputs must match exactly. Change this table only when both of us agree.
+Agree on this before writing agent code. The matching step and the agent tools are built by different people, so the names, inputs and outputs must match exactly. Change this table only when both of us agree.
+
+**Matching step (runs as code before the agent starts, not an agent tool)**
+
+| Function | Owner | Input | Output |
+|---|---|---|---|
+| `find_matches` | Jefferson | `posting_id` | Every student who passes the hard filters and the similarity floor, as a list of `{student_id, similarity}`, closest first |
+
+**Agent tools (four, per instructor recommendation)**
 
 | Tool | Owner | Input | Output |
 |---|---|---|---|
-| `find_matches` (name to confirm) | Jefferson | `posting_id` | Every student who passes the hard filters and the similarity floor, as a list of `{student_id, similarity}`, closest first |
-| `send_match_list` | Hayden | `posting_id`, list of `student_id` | Confirmation that the poster received the list |
-| `notify_students` | Hayden | `posting_id`, list of `student_id` | Who was notified. Open jobs only. |
-| `send_invite` | Hayden | `posting_id`, list of `student_id` chosen by the poster | Who was invited. Private jobs only. |
-| `book_student` | Hayden | `posting_id`, `student_id` | Booking confirmed. Chat opens between poster and student. |
-| `notify_filled` | Hayden | `posting_id`, list of `student_id` | Who was told the job is filled |
-| `tell_poster` | Hayden | `posting_id`, message built from logged tool results | Confirmation the poster got the report |
+| `send_match_list` | Hayden | `posting_id`, list of `student_id` from `find_matches` | Confirmation that the poster received the list |
+| `send_invite` | Hayden | `posting_id`, list of `student_id` chosen by the poster | Who was invited |
+| `get_status` | Hayden | `posting_id` | Each invited student and their answer: accepted, declined or no answer yet |
+| `book_student` | Hayden | `posting_id`, `student_id` | Booking confirmed |
 
 Rules the code checks on every call, not the model:
 - A private job only ever reaches students the poster picked.
+- `book_student` only works on a student who accepted.
 - The agent never writes reasons, rankings or praise about a student.
 - Step limit per job. Every tool call and result is logged.
 
