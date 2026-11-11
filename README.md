@@ -64,6 +64,22 @@ Cut from the original seven tools: `notify_students` (same as `send_invite` with
 - The agent never writes reasons, rankings or praise about a student.
 - Step limit per job. Every tool call and result is logged.
 
+## Posting fields
+
+Each posting is what the poster's form would produce: one free-text `description`, kept exactly as written, plus fields picked from lists.
+
+| Column | Values | Used by |
+|---|---|---|
+| `description` | Free text, never edited | Semantic search |
+| `category` | One category | Semantic search |
+| `time_slots` | Same slot names as the students' `availability`, separated by `; `, or `any` | Hard filter: the student must be free in at least one listed slot |
+| `zip` | 5-digit ZIP or `remote` | Hard filter: distance |
+| `pay_type`, `pay_amount` | `hourly` or `flat`, a dollar amount | Shown to students only |
+| `car_needed` | `yes` or `no` | Hard filter |
+| `tools_needed` | Tools the student must bring, same names as the students' `tools` | Hard filter |
+| `tools_provided` | Tools the poster supplies | Shown only |
+| `license_needed` | A license the student must hold | Hard filter |
+
 ## Folder layout
 
 ```
