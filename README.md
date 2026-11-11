@@ -73,12 +73,14 @@ Each posting is what the poster's form would produce: one free-text `description
 | `description` | Free text, never edited | Semantic search |
 | `category` | One category | Semantic search |
 | `time_slots` | Same slot names as the students' `availability`, separated by `; `, or `any` | Hard filter: the student must be free in at least one listed slot |
-| `zip` | 5-digit ZIP or `remote` | Hard filter: distance |
+| `zip` | 5-digit ZIP or `remote` | Hard filter: the straight-line distance between the job's ZIP center and the student's `home_zip` center must be within the student's `travel_radius_miles`. Remote jobs skip this. |
 | `pay_type`, `pay_amount` | `hourly` or `flat`, a dollar amount | Shown to students only |
 | `car_needed` | `yes` or `no` | Hard filter |
 | `tools_needed` | Tools the student must bring, same names as the students' `tools` | Hard filter |
 | `tools_provided` | Tools the poster supplies | Shown only |
 | `license_needed` | A license the student must hold | Hard filter |
+
+Each student sets a `travel_radius_miles`: 3 to 5 miles without a car, 10 to 25 with one. ZIP centers come from the `pgeocode` package (GeoNames data). Distances are straight lines, not driving miles.
 
 ## Folder layout
 
