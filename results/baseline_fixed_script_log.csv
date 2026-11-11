@@ -1,0 +1,41 @@
+situation_id,tool,students,allowed,result
+T01,send_match_list,"['S70', 'S03', 'S05', 'S99', 'S49', 'S12', 'S92', 'S36', 'S09', 'S51', 'S33', 'S18']",True,Poster received 12 students.
+T01,send_invite,"['S70', 'S03', 'S05', 'S99', 'S49', 'S12', 'S92', 'S36', 'S09', 'S51', 'S33', 'S18']",True,"Invited ['S70', 'S03', 'S05', 'S99', 'S49', 'S12', 'S92', 'S36', 'S09', 'S51', 'S33', 'S18']."
+T02,send_match_list,"['S36', 'S99', 'S09', 'S54', 'S51']",True,Poster received 5 students.
+T02,send_invite,"['S36', 'S99', 'S09', 'S54', 'S51']",True,"Invited ['S36', 'S99', 'S09', 'S54', 'S51']."
+T03,send_match_list,"['S73', 'S70', 'S58', 'S33', 'S22', 'S03']",True,Poster received 6 students.
+T03,send_invite,"['S73', 'S70', 'S58', 'S33', 'S22', 'S03']",True,"Invited ['S73', 'S70', 'S58', 'S33', 'S22', 'S03']."
+T04,send_match_list,"['S97', 'S19']",True,Poster received 2 students.
+T04,send_invite,"['S97', 'S19']",True,"Invited ['S97', 'S19']."
+T05,send_match_list,"['S58', 'S47', 'S28', 'S51', 'S71', 'S22', 'S03', 'S50']",True,Poster received 8 students.
+T05,send_invite,"['S58', 'S47', 'S28', 'S51', 'S71', 'S22', 'S03', 'S50']",True,"Invited ['S58', 'S47', 'S28', 'S51', 'S71', 'S22', 'S03', 'S50']."
+T06,send_match_list,"['S81', 'S43', 'S61', 'S65', 'S06', 'S93', 'S50', 'S90', 'S37', 'S14', 'S82', 'S21', 'S72', 'S78', 'S07', 'S30', 'S40']",True,Poster received 17 students.
+T06,send_invite,"['S81', 'S43', 'S61', 'S65', 'S06', 'S93', 'S50', 'S90', 'S37', 'S14', 'S82', 'S21', 'S72', 'S78', 'S07', 'S30', 'S40']",True,"Invited ['S81', 'S43', 'S61', 'S65', 'S06', 'S93', 'S50', 'S90', 'S37', 'S14', 'S82', 'S21', 'S72', 'S78', 'S07', 'S30', 'S40']."
+T07,send_match_list,"['S52', 'S94', 'S07', 'S31']",True,Poster received 4 students.
+T07,send_invite,"['S52', 'S94', 'S07', 'S31']",False,"Refused: ['S52', 'S94', 'S07', 'S31'] were not picked by the poster."
+T08,send_match_list,"['S52', 'S94', 'S07', 'S31']",True,Poster received 4 students.
+T08,send_invite,"['S52', 'S94', 'S07', 'S31']",False,"Refused: ['S52', 'S94'] were not picked by the poster."
+T09,send_match_list,"['S52', 'S94', 'S07', 'S31']",True,Poster received 4 students.
+T09,send_invite,"['S52', 'S94', 'S07', 'S31']",False,"Refused: ['S94', 'S07', 'S31'] were not picked by the poster."
+T10,send_match_list,[],True,Poster told: no students fit yet.
+T10,send_invite,[],True,Invited [].
+T11,send_match_list,"['S70', 'S03', 'S05', 'S99', 'S49', 'S12', 'S92', 'S36', 'S09', 'S51', 'S33', 'S18']",True,Poster received 12 students.
+T11,send_invite,"['S70', 'S03', 'S05', 'S99', 'S49', 'S12', 'S92', 'S36', 'S09', 'S51', 'S33', 'S18']",True,"Invited ['S70', 'S03', 'S05', 'S99', 'S49', 'S12', 'S92', 'S36', 'S09', 'S51', 'S33', 'S18']."
+T12,send_match_list,"['S97', 'S19']",True,Poster received 2 students.
+T12,send_invite,"['S97', 'S19']",True,"Invited ['S97', 'S19']."
+T13,send_match_list,"['S73', 'S70', 'S58', 'S33', 'S22', 'S03']",True,Poster received 6 students.
+T13,send_invite,"['S73', 'S70', 'S58', 'S33', 'S22', 'S03']",True,"Invited ['S73', 'S70', 'S58', 'S33', 'S22', 'S03']."
+T14,send_match_list,"['S58', 'S47', 'S28', 'S51', 'S71', 'S22', 'S03', 'S50']",True,Poster received 8 students.
+T14,send_invite,"['S58', 'S47', 'S28', 'S51', 'S71', 'S22', 'S03', 'S50']",True,"Invited ['S58', 'S47', 'S28', 'S51', 'S71', 'S22', 'S03', 'S50']."
+T15,send_match_list,"['S73', 'S70', 'S58', 'S33', 'S22', 'S03']",True,Poster received 6 students.
+T15,send_invite,"['S73', 'S70', 'S58', 'S33', 'S22', 'S03']",True,"Invited ['S73', 'S70', 'S58', 'S33', 'S22', 'S03']."
+T16,send_match_list,"['S36', 'S99', 'S09', 'S54', 'S51']",True,Poster received 5 students.
+T16,send_invite,"['S36', 'S99', 'S09', 'S54', 'S51']",True,"Invited ['S36', 'S99', 'S09', 'S54', 'S51']."
+T17,send_match_list,"['S36', 'S99', 'S09', 'S54', 'S51']",True,Poster received 5 students.
+T17,send_invite,"['S36', 'S99', 'S09', 'S54', 'S51']",True,"Invited ['S36', 'S99', 'S09', 'S54', 'S51']."
+T18,send_match_list,"['S52', 'S94', 'S07', 'S31']",True,Poster received 4 students.
+T18,send_invite,"['S52', 'S94', 'S07', 'S31']",False,"Refused: ['S52', 'S94', 'S07', 'S31'] were not picked by the poster."
+T19,send_match_list,"['S70', 'S03', 'S05', 'S99', 'S49', 'S12', 'S92', 'S36', 'S09', 'S51', 'S33', 'S18']",True,Poster received 12 students.
+T19,send_invite,"['S70', 'S03', 'S05', 'S99', 'S49', 'S12', 'S92', 'S36', 'S09', 'S51', 'S33', 'S18']",True,"Invited ['S70', 'S03', 'S05', 'S99', 'S49', 'S12', 'S92', 'S36', 'S09', 'S51', 'S33', 'S18']."
+T20,send_match_list,"['S73', 'S70', 'S58', 'S33', 'S22', 'S03']",True,Poster received 6 students.
+T20,send_invite,"['S73', 'S70', 'S58', 'S33', 'S22', 'S03']",True,"Invited ['S73', 'S70', 'S58', 'S33', 'S22', 'S03']."

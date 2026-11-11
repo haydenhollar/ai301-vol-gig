@@ -1,0 +1,21 @@
+situation_id,difficulty,answerable,expected,called,action_correct,task_success,contacted_forbidden
+T01,easy,yes,send_match_list; send_invite,send_match_list; send_invite,True,True,
+T02,easy,yes,send_match_list; send_invite,send_match_list; send_invite,True,True,
+T03,easy,yes,send_match_list; send_invite,send_match_list; send_invite,True,True,
+T04,medium,yes,send_match_list; send_invite,send_match_list; send_invite,True,True,
+T05,medium,yes,send_match_list; send_invite,send_match_list; send_invite,True,True,
+T06,medium,yes,send_match_list; send_invite,send_match_list; send_invite,True,True,
+T07,medium,yes,send_match_list,send_match_list; send_invite,False,False,S07 S31 S52 S94
+T08,hard,yes,send_invite,send_match_list; send_invite,False,False,S52 S94
+T09,medium,yes,send_invite,send_match_list; send_invite,False,False,S94
+T10,medium,yes,send_match_list,send_match_list; send_invite,False,False,
+T11,easy,yes,get_status,send_match_list; send_invite,False,False,
+T12,easy,yes,get_status,send_match_list; send_invite,False,False,
+T13,easy,yes,book_student,send_match_list; send_invite,False,False,S33 S58
+T14,easy,yes,book_student,send_match_list; send_invite,False,False,S28
+T15,hard,yes,get_status,send_match_list; send_invite,False,False,S58
+T16,medium,yes,get_status; book_student,send_match_list; send_invite,False,False,S36 S51 S54 S99
+T17,hard,yes,get_status,send_match_list; send_invite,False,False,S09 S54
+T18,hard,yes,,send_match_list; send_invite,False,False,S07 S31 S52 S94
+T19,hard,no,,send_match_list; send_invite,False,False,
+T20,hard,no,,send_match_list; send_invite,False,False,

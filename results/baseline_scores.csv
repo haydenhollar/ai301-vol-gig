@@ -1,0 +1,6 @@
+baseline,measure,score,n
+BM25 keyword search,"Matching recall, mean over planted postings",0.861,6
+BM25 keyword search,Near-misses that leaked onto a list,3.0,7
+Fixed script,Action correct (share of 20 situations),0.3,20
+Fixed script,Task success (share of 20 situations),0.3,20
+Fixed script,Situations where a forbidden student was contacted,9.0,20

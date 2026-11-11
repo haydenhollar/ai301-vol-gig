@@ -1,0 +1,8 @@
+posting_id,should_match,found,recall,missed,near_misses_leaked,list_size
+J01,12,12,1.0,,,12
+J03,5,5,1.0,,,5
+J07,3,2,0.6666666666666666,S12,S73,6
+J13,2,1,0.5,S53,S47 S71,8
+J15,2,2,1.0,,,2
+J10,2,2,1.0,,,4
+J18,0,0,,,,0
