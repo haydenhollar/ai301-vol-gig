@@ -1,6 +1,6 @@
 # Data notes
 
-All data here is synthetic. Every student and posting was written by our team. No real people, no personal information, no outside dataset, so no outside license applies.
+The student, posting and test data here is synthetic. We used Claude to generate it. No real people and no personal information. The only outside data is `zip_centers.csv`, which comes from GeoNames (www.geonames.org) under a Creative Commons Attribution license.
 
 ## Files
 
