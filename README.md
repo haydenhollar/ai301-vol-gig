@@ -18,6 +18,7 @@ All data in this repository is synthetic. No real people.
 6. **Every notebook starts with the setup cell.** It clones this repo and loads the data, so both of us always run on the same files.
 
 ## Who owns what
+"owner" is who is in charge of getting the task/file completed, it doesn't mean they created the file. 
 
 | File | Owner |
 |---|---|
@@ -83,6 +84,21 @@ Each posting is what the poster's form would produce: one free-text `description
 | `license_needed` | A license the student must hold | Hard filter |
 
 Each student sets a `travel_radius_miles`: 3 to 5 miles without a car, 10 to 25 with one. ZIP centers come from the `pgeocode` package (GeoNames data). Distances are straight lines, not driving miles.
+
+## Use of AI
+
+We used Claude on this project.
+
+What Claude did:
+- Generated the synthetic data: students, postings, test situations with answer keys and planted cases.
+- Wrote the shared code in `src/volgig.py`, the starter notebooks and the first version of this README.
+- Helped us find the class lab code we could reuse and explained the code to us.
+
+What we did:
+- The project idea and the design choices are ours.
+- We run and check every notebook in Colab ourselves.
+
+The early commits in this repository show Claude as the author. We kept that history instead of hiding it to guide us through how to use it. From here on, we will commit our own work as we learn the system.
 
 ## Folder layout
 
