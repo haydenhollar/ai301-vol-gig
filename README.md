@@ -95,7 +95,7 @@ results/     score tables, charts, agent logs
 
 ## Due dates
 
-- Checkpoint 1, Nov 12: repo link, data loads from the repo, 20 test situations with answer keys, baseline scores
+- Checkpoint 1, Nov 15: data loads from the repo, 20 test situations with answer keys, baseline scores, each tool tested on its own
 - Project review, Nov 24: agent runs all 20 situations
 - Slides and recorded demo, Nov 29
 - Presentation, Dec 1
